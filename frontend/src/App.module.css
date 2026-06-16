@@ -1,0 +1,123 @@
+/* ── App shell ───────────────────────────────────────────────────── */
+.app {
+    min-height: 100vh;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Loading screen ──────────────────────────────────────────────── */
+.loading {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 14px;
+    font-family: var(--font-sans);
+    background: var(--bg);
+}
+.loadDot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 1.2s infinite;
+}
+
+/* ── Layout: sidebar + main ──────────────────────────────────────── */
+.layout {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Main content area — fills all remaining width beside sidebar */
+.main {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* bottom padding for mobile nav */
+    padding-bottom: var(--nav-h);
+}
+
+/* Pre-login full-width */
+.mainFull {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ── Content wrapper — fluid on large screens ───────────────────── */
+.content {
+    /* No max-width — fills the full sidebar-complemented area */
+    width: 100%;
+    padding: 16px 16px 40px;
+    box-sizing: border-box;
+}
+
+/* ── Modal overlay ───────────────────────────────────────────────── */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 300;
+    padding: 40px 16px 16px;
+    backdrop-filter: blur(4px);
+    overflow-y: auto;
+}
+.modalBox {
+    background: var(--bg);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 720px;
+    position: relative;
+    padding-bottom: 20px;
+}
+.modalClose {
+    display: block;
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    padding: 9px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-size: 13px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+}
+.modalClose:hover { background: var(--card); color: var(--text); }
+
+/* ── Responsive breakpoints ──────────────────────────────────────── */
+
+/* Mobile: small padding, nav takes bottom space */
+@media (max-width: 767px) {
+    .content  { padding: 12px 12px 80px; }
+    .main     { padding-bottom: calc(var(--nav-h) + 8px); }
+}
+
+/* Tablet: medium padding, sidebar visible */
+@media (min-width: 768px) {
+    .main     { padding-bottom: 24px; }
+    .content  { padding: 20px 20px 40px; }
+}
+
+/* Laptop (1024–1440px): comfortable padding */
+@media (min-width: 1024px) {
+    .content { padding: 24px 28px 48px; }
+}
+
+/* Large desktop (1440px+): more padding but still fluid */
+@media (min-width: 1440px) {
+    .content { padding: 28px 40px 56px; }
+}
+
+/* Very wide (2560px+ — 4K / ultrawide): cap max width to avoid unreadably long lines */
+@media (min-width: 2000px) {
+    .content { max-width: 1800px; margin: 0 auto; }
+}

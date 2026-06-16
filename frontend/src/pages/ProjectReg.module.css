@@ -1,0 +1,1068 @@
+/* ─────────────────────────────────────────────────────────────────────
+   PROJECT REGISTRATION — Multi-step wizard
+───────────────────────────────────────────────────────────────────── */
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg);
+    min-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0 24px;
+}
+
+/* ── Step indicator bar ────────────────────────────────────────────── */
+.stepBar {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding: 20px 0 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: relative;
+}
+.stepBar::-webkit-scrollbar { display: none; }
+
+.stepItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 60px;
+    position: relative;
+    cursor: default;
+}
+
+.stepDot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--hint);
+    transition: all 0.2s;
+    position: relative;
+    z-index: 2;
+}
+.stepActive .stepDot {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.stepDone .stepDot {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+    font-size: 12px;
+}
+.stepDone { cursor: pointer; }
+
+.stepLabel {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--hint);
+    text-align: center;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+.stepActive .stepLabel { color: var(--accent); font-weight: 600; }
+.stepDone .stepLabel   { color: var(--green); }
+
+.stepLine {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    width: 100%;
+    height: 1.5px;
+    background: var(--border);
+    z-index: 1;
+}
+.stepDone .stepLine { background: var(--green); }
+
+/* ── Step content ──────────────────────────────────────────────────── */
+.stepContent {
+    flex: 1;
+    min-height: 400px;
+}
+
+.stepSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(12px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.stepHeading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 4px;
+}
+.stepNum {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+.stepTitle {
+    font-family: var(--font-head);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+.stepSub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+/* ── Form fields ───────────────────────────────────────────────────── */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.fieldLabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.req { color: var(--red); margin-left: 2px; }
+.fieldHint  { font-size: 11px; color: var(--hint); line-height: 1.4; }
+.fieldError { font-size: 11px; color: var(--red); }
+.inputError { border-color: var(--red) !important; }
+.readOnly   { background: var(--surface) !important; color: var(--muted) !important; cursor: not-allowed; }
+
+/* ── Grids ─────────────────────────────────────────────────────────── */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+
+/* ── Plot diagram ──────────────────────────────────────────────────── */
+.plotDiagram {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0 8px;
+    width: 100%;
+}
+.plotBox {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 70px;   /* room for left arrow label */
+    padding-right: 20px;  /* room for right side */
+    padding-top: 40px;    /* room for top arrow label */
+    padding-bottom: 50px; /* room for road + facing text */
+}
+.plotInner {
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 400px;
+    max-height: 400px;
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    border: 2px dashed var(--accent);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 8px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.plotLabel {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+.plotArea {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.4;
+    position: relative;
+    z-index: 3;
+}
+.plotArrowTop,
+.plotArrowLeft {
+    position: absolute;
+    font-size: 13px;
+    color: var(--muted);
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+    font-weight: 500;
+}
+.plotArrowTop {
+    position: absolute;
+    top: 10px;
+    left: 70px;   /* align with plotInner left edge (same as padding-left) */
+    right: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+}
+.plotArrowLeft {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 65px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+}
+.plotRoad {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--border);
+    box-sizing: border-box;
+}
+.plotRoadLabel {
+    font-size: 11px;
+    color: var(--hint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 8px;
+    text-align: center;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    font-weight: 500;
+}
+.plotRoadLabelVertical {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding: 6px 0;
+}
+.plotCompass {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    z-index: 10;
+}
+.plotCompass .compassRing,
+.compassRing {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(255,255,255,0.15);
+}
+.compassArrow {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -1px;
+}
+.compassLabel {
+    font-size: 11px;
+    font-weight: 700;
+}
+.plotFacingText {
+    margin: 6px auto 0;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ── Toggle ────────────────────────────────────────────────────────── */
+.toggleRow { display: flex; }
+.toggleBtn {
+    padding: 9px 20px;
+    border-radius: 8px;
+    border: 0.5px solid var(--border-l);
+    background: transparent;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.toggleOn {
+    border-color: var(--green);
+    background: color-mix(in srgb, var(--green) 12%, transparent);
+    color: var(--green);
+    font-weight: 500;
+}
+
+/* ── Info / Estimate boxes ─────────────────────────────────────────── */
+.infoBox {
+    background: color-mix(in srgb, var(--accent) 7%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+.estimateCard {
+    background: color-mix(in srgb, var(--green) 8%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--green) 30%, transparent);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.estimateTitle { font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; }
+.estimateVal   { font-family: var(--font-head); font-size: 28px; font-weight: 700; color: var(--green); line-height: 1.1; }
+.estimateNote  { font-size: 11px; color: var(--hint); }
+.estimatePreviewHelp { font-size: 11px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+/* ── Budget ────────────────────────────────────────────────────────── */
+.budgetDisplay {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.budgetBig { font-family: var(--font-head); font-size: 36px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+.budgetSub { font-size: 13px; color: var(--muted); }
+.budgetWords { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.divider   { height: 0.5px; background: var(--border); }
+
+.fundingBar { display: flex; flex-direction: column; gap: 8px; }
+.fundingTitle { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.fundingTrack {
+    height: 10px;
+    background: color-mix(in srgb, var(--green) 25%, transparent);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.fundingLoan {
+    height: 100%;
+    background: #3D7EFF;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+}
+.fundingLabels { display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); }
+
+/* ── Document upload ───────────────────────────────────────────────── */
+.docNote {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+.docGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.docCard {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: border-color 0.2s;
+}
+.docUploaded {
+    border-color: var(--green);
+    background: color-mix(in srgb, var(--green) 5%, transparent);
+}
+.docIcon  { font-size: 22px; }
+.docInfo  { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.docLabel { font-size: 13px; font-weight: 600; color: var(--text); }
+.docNote2 { font-size: 11px; color: var(--hint); line-height: 1.4; }
+.docFile  { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.docFileName  { font-size: 11px; color: var(--green); font-family: var(--font-mono); }
+.docFileSize  { font-size: 10px; color: var(--hint); }
+.docPreviewBtn { font-size: 10px; color: var(--accent); background: transparent; border: none; cursor: pointer; font-family: var(--font-sans); text-decoration: underline; padding: 0; }
+.docActions   { display: flex; gap: 6px; align-items: center; }
+.docUploadBtn {
+    flex: 1;
+    padding: 7px 10px;
+    border-radius: 6px;
+    border: 0.5px solid var(--border-l);
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+}
+.docUploadBtn:hover { border-color: var(--accent); color: var(--accent); }
+.docReplace { border-color: var(--green); color: var(--green); }
+.docRemoveBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: 0.5px solid var(--border);
+    background: transparent;
+    color: var(--hint);
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.docRemoveBtn:hover { border-color: var(--red); color: var(--red); }
+
+/* ── Review ────────────────────────────────────────────────────────── */
+.reviewGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.reviewBlock {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.reviewBlockTitle { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+.reviewRow { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 4px 0; border-bottom: 0.5px solid var(--border); }
+.reviewRow:last-child { border-bottom: none; }
+.reviewKey { font-size: 11px; color: var(--muted); flex-shrink: 0; }
+.reviewVal { font-size: 12px; color: var(--text); font-weight: 500; text-align: right; }
+
+.reviewDocsSummary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--muted);
+}
+.reviewDocsIcon { font-size: 16px; }
+.reviewDocsNote { font-size: 11px; color: var(--hint); }
+
+.estimatePreview {
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--accent) 22%, transparent);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.estimatePreviewTitle { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+.estimatePreviewGrid  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.estItem  { display: flex; flex-direction: column; gap: 2px; }
+.estVal   { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--text); }
+.estLbl   { font-size: 10px; color: var(--muted); }
+.estimatePreviewNote  { font-size: 11px; color: var(--hint); }
+
+/* ── Navigation row ────────────────────────────────────────────────── */
+.navRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 0.5px solid var(--border);
+    margin-top: 8px;
+    gap: 12px;
+}
+.stepProgress { display: flex; gap: 5px; align-items: center; }
+.progressDot  { width: 6px; height: 6px; border-radius: 50%; background: var(--border); transition: background 0.2s; }
+.progressDotFill { background: var(--accent); }
+
+.btnPrimary {
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.btnPrimary:hover { opacity: 0.88; }
+
+.btnSecondary {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 0.5px solid var(--border-l);
+    background: transparent;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: color 0.15s;
+}
+.btnSecondary:hover { color: var(--text); }
+
+.btnSave {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    background: var(--green);
+    color: #0C0F13;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.btnSave:hover    { opacity: 0.88; }
+.btnSave:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Document preview modal ────────────────────────────────────────── */
+.previewOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 400;
+    padding: 16px;
+    backdrop-filter: blur(4px);
+}
+.previewBox {
+    background: var(--card);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.previewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+    flex-shrink: 0;
+}
+.previewClose {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-size: 16px;
+    cursor: pointer;
+    width: 28px; height: 28px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 6px;
+}
+.previewClose:hover { background: var(--border); color: var(--text); }
+.previewImg { width: 100%; max-height: calc(90vh - 50px); object-fit: contain; display: block; }
+.previewPdf { width: 100%; height: calc(90vh - 50px); border: none; display: block; }
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .grid2, .grid3 { grid-template-columns: 1fr; }
+    .docGrid        { grid-template-columns: 1fr; }
+    .reviewGrid     { grid-template-columns: 1fr; }
+    .estimatePreviewGrid { grid-template-columns: repeat(2, 1fr); }
+    .stepLabel      { display: none; }
+    .stepDot        { width: 30px; height: 30px; font-size: 12px; }
+}
+
+/* Modifier alias — referenced in conditional className */
+.stepActive { /* defined inline via .stepActive .stepDot and .stepActive .stepLabel above */ }
+
+/* ── Plan upload (Step 0) ──────────────────────────────────────────── */
+.planUploadZone {
+    border: 1.5px dashed var(--border-l);
+    border-radius: 14px;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+    text-align: center;
+    background: var(--surface);
+}
+.planUploadZone:hover  { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 4%, transparent); }
+.planUploaded          { border-color: var(--green);  border-style: solid; background: color-mix(in srgb, var(--green) 5%, transparent); }
+.planUploaded:hover    { border-color: var(--green); }
+.planUploadIcon  { font-size: 40px; }
+.planUploadDone  { width: 44px; height: 44px; border-radius: 50%; background: var(--green); color: #0C0F13; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; }
+.planUploadTitle { font-size: 16px; font-weight: 600; color: var(--text); }
+.planUploadSub   { font-size: 12px; color: var(--muted); }
+.planUploadNote  { font-size: 12px; color: var(--hint); max-width: 400px; line-height: 1.6; margin-top: 4px; }
+.planReplaceBtn  {
+    margin-top: 4px;
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 0.5px solid var(--border-l);
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+}
+.planReplaceBtn:hover { color: var(--text); border-color: var(--accent); }
+
+/* Extracting spinner */
+.extractingBox {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+.extractingSpinner {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    border-top-color: var(--accent);
+    animation: spin .8s linear infinite;
+    flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.extractingTitle { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+.extractingMsg   { font-size: 12px; color: var(--muted); }
+
+/* Extracted success */
+.extractedBox {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: color-mix(in srgb, var(--green) 8%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--green) 30%, transparent);
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+.extractedIcon  { width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: #0C0F13; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+.extractedTitle { font-size: 13px; font-weight: 500; color: var(--green); margin-bottom: 2px; }
+.extractedMsg   { font-size: 12px; color: var(--muted); }
+
+.extractErrorBox {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: color-mix(in srgb, var(--red) 8%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--red) 30%, transparent);
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+.extractErrorTitle { font-size: 13px; font-weight: 600; color: var(--red); margin-bottom: 2px; }
+.extractErrorMsg   { font-size: 12px; color: var(--muted); }
+
+.extractRawTextBox {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: 12px;
+}
+.extractRawTextTitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.extractRawTextContent {
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+    background: var(--surface);
+    border: none;
+    padding: 0;
+    margin: 0;
+    max-height: 220px;
+    overflow: auto;
+}
+
+.mappingPanel {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+}
+.mappingPanelTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.mappingPanelNote {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+.mappingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+.mappingActions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+/* What will be extracted preview */
+.extractPreviewCard {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.extractPreviewTitle { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.extractPreviewGrid  { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.extractPreviewItem  { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+.extractPreviewNote  { font-size: 11px; color: var(--hint); line-height: 1.5; }
+
+/* Extracted fields summary */
+.extractedFields { background: var(--surface); border: 0.5px solid var(--green); border-radius: 10px; padding: 14px 16px; }
+.extractedFieldsTitle { font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px; }
+.extractedFieldsGrid  { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.extractedFieldItem   { display: flex; flex-direction: column; gap: 2px; }
+.extractedFieldKey    { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.extractedFieldVal    { font-size: 13px; color: var(--text); font-weight: 500; }
+
+/* Skip note */
+.planSkipNote { font-size: 12px; color: var(--hint); text-align: center; line-height: 1.6; }
+.planSkipLink { color: var(--accent); text-decoration: underline; cursor: pointer; }
+
+/* ── Analyze all documents button ────────────────────────────────── */
+.analyzeAllBtn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: background .15s;
+}
+.analyzeAllBtn:hover { background: color-mix(in srgb, var(--accent) 16%, transparent); }
+
+/* ── Feet-inches input ───────────────────────────────────────────── */
+.ftInWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.ftInRow {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.ftInput {
+    width: 70px !important;
+    text-align: right;
+    font-family: var(--font-mono) !important;
+    font-size: 14px !important;
+}
+.inInput {
+    width: 54px !important;
+    text-align: right;
+    font-family: var(--font-mono) !important;
+    font-size: 14px !important;
+}
+.ftInUnit {
+    font-size: 13px;
+    color: var(--muted);
+    min-width: 16px;
+}
+.ftInDecimal {
+    font-size: 11px;
+    color: var(--hint);
+    font-family: var(--font-mono);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   DOCS STEP — tabbed multi-document uploader
+═══════════════════════════════════════════════════════════════════ */
+
+/* Summary bar */
+.docSummaryBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.docSummaryCount { font-size: 13px; font-weight: 600; color: var(--text); }
+.docSummaryHint  { font-size: 12px; color: var(--muted); }
+
+/* Tab bar */
+.docTabBar {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+    scrollbar-width: none;
+}
+.docTabBar::-webkit-scrollbar { display: none; }
+
+.docTab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .12s;
+    position: relative;
+}
+.docTab:hover      { color: var(--text); }
+.docTabActive      { color: var(--accent); border-bottom-color: var(--accent); background: var(--surface); }
+.docTabIcon        { font-size: 15px; }
+.docTabLabel       { font-size: 12.5px; }
+.docTabBadge {
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #0D1117;
+    padding: 0 5px;
+}
+
+/* Tab content */
+.docTabContent {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 0 4px;
+}
+
+/* Slot header */
+.docSlotHeader {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.docSlotIconLg { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.docSlotTitle  { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.docSlotNote   { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Multi-doc wrapper */
+.multiDocWrap  { display: flex; flex-direction: column; gap: 10px; }
+
+/* Drop zone */
+.multiDropZone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 28px 20px;
+    border: 2px dashed var(--border-l);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+    text-align: center;
+}
+.multiDropZone:hover    { border-color: var(--accent); background: var(--accent-bg); }
+.multiDropZoneDone      { border-style: solid; background: color-mix(in srgb, var(--green) 5%, transparent); }
+.multiDropIcon          { font-size: 32px; line-height: 1; }
+.multiDropTitle         { font-size: 14px; font-weight: 600; color: var(--text); }
+.multiDropHint          { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.multiDropBtn {
+    padding: 7px 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    color: #0D1117;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    margin-top: 4px;
+    transition: opacity .12s;
+}
+.multiDropBtn:hover { opacity: .85; }
+
+/* File list */
+.multiFileList       { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+.multiFileListHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}
+.multiFileListHint { color: var(--hint); font-size: 11px; }
+
+.multiFileRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    transition: background .1s;
+}
+.multiFileRow:last-child { border-bottom: none; }
+.multiFileRow:hover      { background: var(--surface); }
+.multiFileIcon           { font-size: 18px; flex-shrink: 0; }
+.multiFileInfo           { flex: 1; min-width: 0; }
+.multiFileName           { font-size: 13px; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.multiFileMeta           { font-size: 11px; color: var(--hint); margin-top: 1px; }
+.multiFileActions        { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
+
+.multiPreviewBtn {
+    padding: 4px 10px;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--border-l);
+    background: transparent;
+    color: var(--muted);
+    font-size: 11px;
+    font-family: var(--font-sans);
+    cursor: pointer;
+}
+.multiPreviewBtn:hover { color: var(--text); border-color: var(--text); }
+
+.multiRemoveBtn {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--hint);
+    font-size: 11px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all .12s;
+}
+.multiRemoveBtn:hover { background: var(--red-bg); color: var(--red); border-color: var(--red); }
+
+/* Single file actions row */
+.singleFileActions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+    .docTabLabel { display: none; }
+    .docTab      { padding: 10px 12px; }
+    .docTabIcon  { font-size: 18px; }
+}
+
+/* Referenced utility classes */
+.estimateBreakdown { display: flex; flex-direction: column; gap: 6px; }
+.breakRow { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.breakRow:last-child { border-bottom: none; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+@media (max-width: 640px) { .grid4 { grid-template-columns: repeat(2, 1fr); } }
+
+/* Setback 2×2 grid — Front/Back on row 1, Left/Right on row 2 */
+.setbackGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE — ProjectRegistration fluid layout
+═══════════════════════════════════════════════════════════════════ */
+
+/* Mobile */
+@media (max-width: 767px) {
+  .wrap       { max-width: 100%; padding: 0 4px; }
+  .grid2      { grid-template-columns: 1fr; }
+  .grid3      { grid-template-columns: 1fr 1fr; }
+  .stepBar    { gap: 2px; padding: 10px 8px; }
+  .stepLabel  { display: none; }
+  .stepContent { padding: 14px 12px; }
+  .setbackGrid { grid-template-columns: 1fr 1fr; }
+  .reviewGrid  { grid-template-columns: 1fr; }
+}
+
+/* Tablet: keep 2-col layouts */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .wrap     { max-width: 700px; }
+  .reviewGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop 1024px+: full 3-col, wider form */
+@media (min-width: 1024px) {
+  .wrap       { max-width: 900px; }
+  .grid3      { grid-template-columns: repeat(3, 1fr); }
+  .reviewGrid { grid-template-columns: repeat(2, 1fr); }
+  .stepContent { padding: 28px; }
+}
+
+/* Large desktop 1280px+ */
+@media (min-width: 1280px) {
+  .wrap { max-width: 1050px; }
+  .reviewGrid { grid-template-columns: repeat(4, 1fr); }
+  .stepContent { padding: 32px; }
+}
+
+/* Ultra-wide 1600px+ */
+@media (min-width: 1600px) {
+  .wrap { max-width: 1200px; }
+}

@@ -1,0 +1,167 @@
+/* ── Auth pages ──────────────────────────────────────────────────────────── */
+.authWrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    padding: 20px;
+}
+
+.authCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px 28px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 32px rgba(0,0,0,.18);
+}
+
+/* Brand */
+.authBrand { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 4px; }
+.authBrandIcon { font-size: 32px; line-height: 1; }
+.authBrandName { font-size: 22px; font-weight: 700; color: var(--text); font-family: var(--font-head); letter-spacing: -0.5px; }
+.authBrandTag  { font-size: 11px; color: var(--hint); text-transform: uppercase; letter-spacing: .1em; }
+
+.authTitle { font-size: 18px; font-weight: 600; color: var(--text); margin: 0; text-align: center; font-family: var(--font-head); }
+.authSub   { font-size: 13px; color: var(--muted); text-align: center; margin: -12px 0 0; line-height: 1.5; }
+
+/* Step indicator */
+.stepIndicator { display: flex; align-items: center; justify-content: center; gap: 0; }
+.stepDot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--border-l);
+    background: var(--surface);
+    color: var(--hint);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all .2s;
+}
+.stepActive { border-color: var(--accent); background: var(--accent); color: #0D1117; }
+.stepDone   { border-color: var(--green);  background: var(--green);  color: #0D1117; }
+.stepLine   { width: 48px; height: 2px; background: var(--border); flex-shrink: 0; transition: background .2s; }
+.stepLineDone { background: var(--green); }
+.stepLabel  { text-align: center; font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .07em; margin-top: -8px; }
+
+/* Form */
+.authForm  { display: flex; flex-direction: column; gap: 14px; }
+.fieldGroup { display: flex; flex-direction: column; gap: 5px; }
+.fieldLabel { font-size: 12px; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: .06em; }
+.fieldHint  { font-size: 11px; color: var(--hint); }
+
+/* Password */
+.passWrap    { position: relative; }
+.passWrap input { padding-right: 44px !important; }
+.passToggle  {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    background: transparent; border: none; cursor: pointer; font-size: 15px; padding: 4px;
+    line-height: 1; color: var(--muted);
+}
+
+/* Phone */
+.phoneWrap   { display: flex; align-items: stretch; }
+.phonePrefix {
+    display: flex; align-items: center; padding: 0 10px;
+    background: var(--surface); border: 1px solid var(--border); border-right: none;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+    font-size: 13px; color: var(--muted); font-weight: 500;
+    white-space: nowrap;
+}
+.phoneWrap input { border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important; }
+
+/* OTP input */
+.otpInput {
+    font-size: 28px !important;
+    font-family: var(--font-mono) !important;
+    letter-spacing: 10px !important;
+    text-align: center !important;
+    padding: 12px 20px !important;
+}
+.otpTimer { font-size: 11px; color: var(--amber); font-weight: 500; text-align: center; }
+
+/* Password strength */
+.pwStrengthBar { display: flex; align-items: center; gap: 4px; margin-top: 4px; }
+.pwStrengthSeg { height: 3px; flex: 1; border-radius: 2px; transition: background .2s; }
+.pwRules { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; }
+.pwRuleOk   { font-size: 11px; color: var(--green); }
+.pwRuleFail { font-size: 11px; color: var(--hint); }
+
+/* Main button */
+.authBtn {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    border: none;
+    background: var(--accent);
+    color: #0D1117;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: opacity .12s, transform .1s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.authBtn:hover:not(:disabled)  { opacity: .9; }
+.authBtn:active:not(:disabled) { transform: scale(0.99); }
+.authBtn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Dev OTP banner */
+.devOtpBanner {
+    background: color-mix(in srgb, var(--amber) 10%, transparent);
+    border: 1.5px dashed color-mix(in srgb, var(--amber) 50%, transparent);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+.devOtpLabel { font-size: 11px; font-weight: 600; color: var(--amber); }
+.devOtpCode  { font-family: var(--font-mono); font-size: 32px; font-weight: 700; color: var(--accent); letter-spacing: 6px; }
+.devOtpNote  { font-size: 10px; color: var(--hint); text-align: center; }
+
+/* Error */
+.authError {
+    padding: 9px 12px;
+    border-radius: var(--radius-sm);
+    background: var(--red-bg, rgba(248,81,73,.08));
+    border: 1px solid color-mix(in srgb, var(--red) 30%, transparent);
+    color: var(--red);
+    font-size: 13px;
+}
+
+/* Footer links */
+.authDivider { display: flex; align-items: center; gap: 10px; color: var(--hint); font-size: 12px; }
+.authDivider::before, .authDivider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.authFooter, .authFooterMain { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; color: var(--muted); }
+.authLink { background: transparent; border: none; color: var(--accent); font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font-sans); padding: 0; }
+.authLink:hover { text-decoration: underline; }
+.authLink:disabled { opacity: .5; cursor: not-allowed; }
+.authBack    { background: transparent; border: none; color: var(--muted); font-size: 12px; cursor: pointer; font-family: var(--font-sans); padding: 4px 0; }
+.authBack:hover { color: var(--text); }
+.authBackTop { background: transparent; border: none; color: var(--hint); font-size: 12px; cursor: pointer; font-family: var(--font-sans); align-self: flex-start; }
+
+/* Spinner */
+.spinner {
+    width: 16px; height: 16px;
+    border: 2px solid rgba(13,17,23,.2);
+    border-top-color: #0D1117;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Mobile */
+@media (max-width: 480px) {
+    .authCard    { padding: 28px 20px 24px; border-radius: 16px; }
+    .stepLine    { width: 32px; }
+    .otpInput    { font-size: 22px !important; letter-spacing: 6px !important; }
+}

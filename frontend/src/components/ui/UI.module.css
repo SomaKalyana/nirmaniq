@@ -1,0 +1,85 @@
+.badge {
+  display: inline-block;
+  border-radius: 10px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.barTrack {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.barFill {
+  transition: width 0.55s ease;
+}
+
+.statCard {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+.statLabel {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 4px;
+}
+.statValue {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--font-head);
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+.statSub {
+  font-size: 11px;
+  color: var(--hint);
+  line-height: 1.4;
+}
+
+.sectionTitle {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  gap: 10px;
+  color: var(--hint);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.6;
+}
+.emptyIcon { font-size: 32px; }
+
+.checkBtn {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  margin-top: 1px;
+}
+
+.divider {
+  height: 0.5px;
+  background: var(--border);
+  margin: 8px 0;
+}

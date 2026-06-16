@@ -1,0 +1,1594 @@
+{
+  "project": {
+    "id": "proj_1780457309994",
+    "name": "wqeq",
+    "projectName": "wqeq",
+    "ownerName": "ytrt",
+    "siteAddress": "dfsdsf",
+    "approvalNumber": "kljhj",
+    "plotLength": 60,
+    "plotWidth": 35,
+    "plotArea": "195.1",
+    "dimensions": "60\u00d735 ft",
+    "facing": "South",
+    "direction": "South",
+    "roadWidth": 18,
+    "locality": "SDSDC",
+    "city": "trebbrs",
+    "floorConfig": "S+G+2",
+    "hasStilt": true,
+    "stilt": true,
+    "totalFloors": 4,
+    "suggestedFloors": 4,
+    "floorHeight": 10.5,
+    "hasLift": false,
+    "hasLiftRoom": false,
+    "slabArea": 7728,
+    "builderName": "Praveen",
+    "startDate": "2026-06-10",
+    "durationMonths": 15,
+    "totalBudget": 14000000,
+    "builderQuote": 13500000,
+    "loanAmount": 10200000,
+    "selfFunds": 3800000,
+    "ratePerSft": 2100,
+    "docs": {},
+    "createdAt": "2026-06-03T03:28:29.994Z"
+  },
+  "bs_mats": [
+    {
+      "id": 1,
+      "name": "Brick",
+      "quantity": 100
+    },
+    {
+      "id": 2,
+      "name": "Cement",
+      "quantity": 50
+    }
+  ],
+  "bs_stages": [
+    {
+      "id": "s0",
+      "label": "Pre-Construction: Documents & Approvals",
+      "icon": "\ud83d\udccb",
+      "color": "#F5A623",
+      "phase": "prerequisite",
+      "budgetPct": 1,
+      "durationWks": 8,
+      "isPrereq": true,
+      "groups": [
+        {
+          "id": "g1",
+          "title": "A. Land & Ownership Documents",
+          "color": "#3D7EFF",
+          "items": [
+            {
+              "id": "d01",
+              "done": false,
+              "text": "Original Sale Deed (registered) in owner's name",
+              "note": "Must be registered at Sub-Registrar. Keep 3 certified copies.",
+              "doneDate": ""
+            },
+            {
+              "id": "d02",
+              "done": false,
+              "text": "Encumbrance Certificate (EC) \u2014 minimum 30 years",
+              "note": "From Sub-Registrar office. Bank insists on 30-yr EC showing no mortgage or lien.",
+              "doneDate": ""
+            },
+            {
+              "id": "d03",
+              "done": false,
+              "text": "Pattadar Passbook / Pahani (Meebhoomi)",
+              "note": "meebhoomi.ap.gov.in \u2014 confirms revenue records in your name.",
+              "doneDate": ""
+            },
+            {
+              "id": "d04",
+              "done": false,
+              "text": "Latest Property Tax receipt (GVMC Khanapayment)",
+              "note": "Must be paid up to date. Required for both building permission and bank loan.",
+              "doneDate": ""
+            },
+            {
+              "id": "d05",
+              "done": false,
+              "text": "Survey Settlement Register (SSR) extract",
+              "note": "From MRO office. Confirms survey number S.No. 46 ownership.",
+              "doneDate": ""
+            },
+            {
+              "id": "d06",
+              "done": false,
+              "text": "Link documents / chain of title (prior sale deeds)",
+              "note": "Bank requires clear title chain for minimum 30 years.",
+              "doneDate": ""
+            },
+            {
+              "id": "d07",
+              "done": false,
+              "text": "Ratnagiri HB Colony layout approval copy",
+              "note": "Your plot is MIG-167 in HB Colony. Get the colony layout approval from GVMC records.",
+              "doneDate": ""
+            },
+            {
+              "id": "d08",
+              "done": false,
+              "text": "Land classification confirmed as residential (non-agricultural)",
+              "note": "Confirm in Pahani. Must be residential, not agricultural.",
+              "doneDate": ""
+            }
+          ]
+        },
+        {
+          "id": "g2",
+          "title": "B. Building Permission (GVMC / APDPMS)",
+          "color": "#2DD4A0",
+          "items": [
+            {
+              "id": "d09",
+              "done": false,
+              "text": "Building Permission Order \u2014 PER/1086/0349/2026 \u2713 OBTAINED",
+              "note": "Obtained 30-04-2026. Valid. Check BPO for commencement deadline and conditions.",
+              "doneDate": ""
+            },
+            {
+              "id": "d10",
+              "done": false,
+              "text": "Digitally signed approved plan \u2014 all 5 sheets from APDPMS portal",
+              "note": "Download from portal.apdpms.ap.gov.in with your file number. Print A1 size. Keep digital PDF. PRIMARY on-site document.",
+              "doneDate": ""
+            },
+            {
+              "id": "d11",
+              "done": false,
+              "text": "LTP (Licensed Technical Person) signed copies of all drawings",
+              "note": "Abdul Mannan / Mannan Design Group must sign all drawing sets. Required by APDPMS and all banks.",
+              "doneDate": ""
+            },
+            {
+              "id": "d12",
+              "done": false,
+              "text": "Structural Engineer stability certificate",
+              "note": "Signed by licensed Structural Engineer. Required by APDPMS and bank.",
+              "doneDate": ""
+            },
+            {
+              "id": "d13",
+              "done": false,
+              "text": "Soil Test Report \u2014 Andhra University Civil Dept \u2713 OBTAINED",
+              "note": "Obtained 14-05-2026. SBC = 14.4 t/m\u00b2. FOD = 2.4m. Keep original safely.",
+              "doneDate": ""
+            },
+            {
+              "id": "d14",
+              "done": false,
+              "text": "Building commencement notice filed with GVMC",
+              "note": "Submit to GVMC Town Planning before breaking ground. Required by BP conditions.",
+              "doneDate": ""
+            },
+            {
+              "id": "d15",
+              "done": false,
+              "text": "Self-Certification Proforma (AP SCS 2025) \u2014 owner + LTP signed",
+              "note": "AP SCS 2025 scheme. Both owner and LTP sign and upload to OBPS portal for instant permission.",
+              "doneDate": ""
+            },
+            {
+              "id": "d16",
+              "done": false,
+              "text": "LTP Plinth Level Inspection report (after plinth beam)",
+              "note": "SCS 2025: LTP uploads PLI report within 7 days of plinth beam completion with geotagged photos.",
+              "doneDate": ""
+            }
+          ]
+        },
+        {
+          "id": "g3",
+          "title": "C. NOCs & Utility Clearances",
+          "color": "#9B7FFF",
+          "items": [
+            {
+              "id": "d17",
+              "done": false,
+              "text": "Demolition NOC \u2014 existing structure (26.65 sqm)",
+              "note": "Get GVMC demolition permission before demolishing old structure on site.",
+              "doneDate": ""
+            },
+            {
+              "id": "d18",
+              "done": false,
+              "text": "APEPDCL \u2014 temporary construction electricity connection",
+              "note": "Apply to APEPDCL Vizag for temp construction power. Needed before work starts.",
+              "doneDate": ""
+            },
+            {
+              "id": "d19",
+              "done": false,
+              "text": "GVMC \u2014 water connection application",
+              "note": "Apply for water and sewerage connection before construction starts.",
+              "doneDate": ""
+            },
+            {
+              "id": "d20",
+              "done": false,
+              "text": "Fire NOC \u2014 provisional (GVMC Fire Dept via APDPMS)",
+              "note": "Required for G+2 residential. Apply via gvmc.gov.in Fire NOC portal.",
+              "doneDate": ""
+            },
+            {
+              "id": "d21",
+              "done": false,
+              "text": "Rain Water Harvesting (RWH) \u2014 implementation plan ready",
+              "note": "AP mandate for buildings >300 sqm. Already shown in approved plan. Arrange contractor.",
+              "doneDate": ""
+            },
+            {
+              "id": "d22",
+              "done": false,
+              "text": "APEPDCL permanent connection \u2014 transformer sanction letter",
+              "note": "Apply for permanent electricity sanction based on total load. Needed before handover.",
+              "doneDate": ""
+            }
+          ]
+        },
+        {
+          "id": "g4",
+          "title": "D. Financial & Insurance",
+          "color": "#FF5A5A",
+          "items": [
+            {
+              "id": "d23",
+              "done": false,
+              "text": "Dedicated construction bank account opened",
+              "note": "Separate savings/current account only for construction payments. Never mix with personal funds.",
+              "doneDate": ""
+            },
+            {
+              "id": "d24",
+              "done": false,
+              "text": "Builder contract signed \u2014 scope, milestones, penalties",
+              "note": "Must include: full scope of work, stage-wise payment schedule, delay penalty clauses, completion date, material spec list.",
+              "doneDate": ""
+            },
+            {
+              "id": "d25",
+              "done": false,
+              "text": "Builder references verified \u2014 visit 2\u20133 completed projects",
+              "note": "Talk to those owners directly. Do not rely on photos or builder's claims alone.",
+              "doneDate": ""
+            },
+            {
+              "id": "d26",
+              "done": false,
+              "text": "Contractor All Risk (CAR) insurance policy",
+              "note": "Recommended for \u20b91.4 Cr project. Covers material theft, fire, structural damage during construction.",
+              "doneDate": ""
+            },
+            {
+              "id": "d27",
+              "done": false,
+              "text": "Workmen's Compensation Policy (builder to provide)",
+              "note": "Builder must have this. Protects you from liability if any labourer is injured on site.",
+              "doneDate": ""
+            }
+          ]
+        },
+        {
+          "id": "g5",
+          "title": "E. Bank Construction Loan (if applicable)",
+          "color": "#6699FF",
+          "items": [
+            {
+              "id": "d28",
+              "done": false,
+              "text": "KYC \u2014 Aadhaar + PAN card (all co-applicants)",
+              "note": "Self-attested copies. Originals for bank verification. All co-owners must be co-applicants.",
+              "doneDate": ""
+            },
+            {
+              "id": "d29",
+              "done": false,
+              "text": "Income proof \u2014 salary slips (3 months) or ITR (3 years)",
+              "note": "Salaried: slips + Form 16 + 6-month bank statement. Self-employed: ITR 3yr + P&L + balance sheet.",
+              "doneDate": ""
+            },
+            {
+              "id": "d30",
+              "done": false,
+              "text": "Bank statements \u2014 all accounts, last 6 months",
+              "note": "Must show regular income credits. Joint account statements if applicable.",
+              "doneDate": ""
+            },
+            {
+              "id": "d31",
+              "done": false,
+              "text": "CIBIL score check \u2014 minimum 750 recommended",
+              "note": "Check free at cibil.com. Score below 700 affects loan amount and interest rate significantly.",
+              "doneDate": ""
+            },
+            {
+              "id": "d32",
+              "done": false,
+              "text": "Original Sale Deed + EC submitted to bank",
+              "note": "Bank holds originals as security. Get written acknowledgment receipt from bank.",
+              "doneDate": ""
+            },
+            {
+              "id": "d33",
+              "done": false,
+              "text": "APDPMS digitally signed approved plan submitted to bank",
+              "note": "Bank requires the official approved plan. Complete item B2 first.",
+              "doneDate": ""
+            },
+            {
+              "id": "d34",
+              "done": false,
+              "text": "Structural Engineer certificate submitted to bank",
+              "note": "Bank's technical valuer verifies structural safety. Same cert as item B3.",
+              "doneDate": ""
+            },
+            {
+              "id": "d35",
+              "done": false,
+              "text": "Detailed construction cost estimate submitted to bank",
+              "note": "Bank sanctions 75\u201380% of construction cost. Get estimate prepared by your engineer.",
+              "doneDate": ""
+            },
+            {
+              "id": "d36",
+              "done": false,
+              "text": "Loan sanction letter received from bank",
+              "note": "Keep original. Disbursements are stage-wise after bank technical officer inspects each stage.",
+              "doneDate": ""
+            },
+            {
+              "id": "d37",
+              "done": false,
+              "text": "Bank technical valuation done (pre-disbursement)",
+              "note": "Bank sends officer before each disbursement. Keep their contact number handy for quick visits.",
+              "doneDate": ""
+            }
+          ]
+        },
+        {
+          "id": "g6",
+          "title": "F. On-Site Setup Before Work Starts",
+          "color": "#2DD4A0",
+          "items": [
+            {
+              "id": "d38",
+              "done": false,
+              "text": "Approved plan \u2014 all 5 sheets laminated and kept on site",
+              "note": "In a waterproof folder on site at all times. GVMC inspector may visit any time.",
+              "doneDate": ""
+            },
+            {
+              "id": "d39",
+              "done": false,
+              "text": "BPO displayed at site entrance (visible hoarding)",
+              "note": "GVMC requirement \u2014 Building Permission Order must be visibly displayed at entry.",
+              "doneDate": ""
+            },
+            {
+              "id": "d40",
+              "done": false,
+              "text": "Site hoarding / boundary fence erected",
+              "note": "Secure perimeter before any demolition or excavation begins.",
+              "doneDate": ""
+            },
+            {
+              "id": "d41",
+              "done": false,
+              "text": "Temporary water + electricity connections live",
+              "note": "Construction cannot start without both. Arrange before handing over to builder.",
+              "doneDate": ""
+            },
+            {
+              "id": "d42",
+              "done": false,
+              "text": "Watchman + temporary accommodation ready",
+              "note": "Live-in watchman with family before first material delivery. Water + electricity + toilet arranged.",
+              "doneDate": ""
+            },
+            {
+              "id": "d43",
+              "done": false,
+              "text": "Soil test report + approved plan handed to builder supervisor",
+              "note": "Builder supervisor must have copies on Day 1. No excuse for wrong founding depth.",
+              "doneDate": ""
+            },
+            {
+              "id": "d44",
+              "done": false,
+              "text": "Construction commencement date recorded officially",
+              "note": "Note date in writing. BPO has a commencement deadline. Inform LTP to log it in APDPMS.",
+              "doneDate": ""
+            }
+          ]
+        },
+        {
+          "id": "g7",
+          "title": "G. Post-Construction: Occupancy Certificate",
+          "color": "#F5A623",
+          "items": [
+            {
+              "id": "d45",
+              "done": false,
+              "text": "Completion certificate from LTP / structural engineer",
+              "note": "LTP certifies construction matches approved plan. Without this, OC won't be processed.",
+              "doneDate": ""
+            },
+            {
+              "id": "d46",
+              "done": false,
+              "text": "Occupancy Certificate (OC) application \u2014 APDPMS portal",
+              "note": "Apply at portal.apdpms.ap.gov.in after completion. GVMC inspects within 15 days.",
+              "doneDate": ""
+            },
+            {
+              "id": "d47",
+              "done": false,
+              "text": "Fire NOC \u2014 final (post-construction)",
+              "note": "GVMC Fire Dept final NOC after building complete. Required for OC.",
+              "doneDate": ""
+            },
+            {
+              "id": "d48",
+              "done": false,
+              "text": "APEPDCL permanent metered connection installed",
+              "note": "Apply with OC draft. Transformer sanction obtained at item C6.",
+              "doneDate": ""
+            },
+            {
+              "id": "d49",
+              "done": false,
+              "text": "GVMC permanent water + sewerage connection",
+              "note": "Apply with OC copy.",
+              "doneDate": ""
+            },
+            {
+              "id": "d50",
+              "done": false,
+              "text": "Property tax reassessment + new door number (GVMC)",
+              "note": "After OC, apply to GVMC for revised property tax and new door number for the new building.",
+              "doneDate": ""
+            },
+            {
+              "id": "d51",
+              "done": false,
+              "text": "RWH + solar compliance certificate from LTP",
+              "note": "AP state mandate. LTP certifies implementation on site.",
+              "doneDate": ""
+            },
+            {
+              "id": "d52",
+              "done": false,
+              "text": "Bank mortgage release after full loan repayment",
+              "note": "Collect original sale deed from bank. Get mortgage cancellation deed registered at Sub-Registrar.",
+              "doneDate": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "label": "Excavation & Earthwork",
+      "icon": "\u26cf",
+      "color": "#3D7EFF",
+      "phase": "foundation",
+      "budgetPct": 2,
+      "durationWks": 4,
+      "checklist": [
+        "Mark all column positions as per approved centerline drawing",
+        "Excavate to minimum 2.4m depth (as per soil report FOD)",
+        "Soil inspection at founding level \u2014 verify SBC matches 14.4 t/m\u00b2",
+        "Anti-termite chemical treatment pre-construction",
+        "Earthpit excavation for earthing (14 nos as per drawing)",
+        "Dewatering arrangement if groundwater encountered",
+        "Supervisor confirms all pit dimensions before PCC pour"
+      ],
+      "tasks": [
+        {
+          "id": "s1_0",
+          "text": "Mark all column positions as per approved centerline drawing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s1_1",
+          "text": "Excavate to minimum 2.4m depth (as per soil report FOD)",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s1_2",
+          "text": "Soil inspection at founding level \u2014 verify SBC matches 14.4 t/m\u00b2",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s1_3",
+          "text": "Anti-termite chemical treatment pre-construction",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s1_4",
+          "text": "Earthpit excavation for earthing (14 nos as per drawing)",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s1_5",
+          "text": "Dewatering arrangement if groundwater encountered",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s1_6",
+          "text": "Supervisor confirms all pit dimensions before PCC pour",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Foundation & Footings",
+      "icon": "\ud83c\udfd7",
+      "color": "#9B7FFF",
+      "phase": "foundation",
+      "budgetPct": 10,
+      "durationWks": 8,
+      "checklist": [
+        "PCC 1:4:8 bed 150mm thick \u2014 6.3 cum laid and cured",
+        "F1 footing (9\u00d77.5ft) \u2014 10\u00d8-22 bars both ways",
+        "F3 footings \u00d79 (4.5\u00d74.5ft) \u2014 10\u00d8-18 bars both ways",
+        "F4 footing (3.5\u00d73.5ft) steel placed",
+        "F5 footing (2.5\u00d72.5ft) steel placed",
+        "CF-1 combined footing 15\u00d78ft \u2014 beam reinforcement as per drawing",
+        "Cover blocks 50mm placed before every pour",
+        "M20 concrete pour \u2014 3 cube samples per pour collected",
+        "Curing 28 days minimum \u2014 watchman tally log 3\u00d7 daily",
+        "Builder supervisor sign-off before backfilling"
+      ],
+      "tasks": [
+        {
+          "id": "s2_0",
+          "text": "PCC 1:4:8 bed 150mm thick \u2014 6.3 cum laid and cured",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_1",
+          "text": "F1 footing (9\u00d77.5ft) \u2014 10\u00d8-22 bars both ways",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_2",
+          "text": "F3 footings \u00d79 (4.5\u00d74.5ft) \u2014 10\u00d8-18 bars both ways",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_3",
+          "text": "F4 footing (3.5\u00d73.5ft) steel placed",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_4",
+          "text": "F5 footing (2.5\u00d72.5ft) steel placed",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_5",
+          "text": "CF-1 combined footing 15\u00d78ft \u2014 beam reinforcement as per drawing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_6",
+          "text": "Cover blocks 50mm placed before every pour",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_7",
+          "text": "M20 concrete pour \u2014 3 cube samples per pour collected",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_8",
+          "text": "Curing 28 days minimum \u2014 watchman tally log 3\u00d7 daily",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s2_9",
+          "text": "Builder supervisor sign-off before backfilling",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Columns & Plinth Beam",
+      "icon": "\ud83c\udfdb",
+      "color": "#2DD4A0",
+      "phase": "structure",
+      "budgetPct": 12,
+      "durationWks": 10,
+      "checklist": [
+        "Stilt columns C1/C2: 8\u00d720\u00d8, C3: 4\u00d720+4\u00d716\u00d8, C4: 8\u00d716\u00d8, C5: 8\u00d716\u00d8",
+        "Column spacing verified against approved drawing before pour",
+        "Plinth beam 9\u00d718in \u2014 4\u00d716\u00d8 main + 8\u00d8 stirrups@200mm",
+        "Cover blocks 38mm on all columns before shuttering",
+        "Shuttering plumb and aligned \u2014 spirit level both directions",
+        "M25 concrete pour \u2014 slump test + cube samples",
+        "No extra water added to concrete after batching",
+        "Column curing minimum 14 days",
+        "Photograph all columns before and after shuttering"
+      ],
+      "tasks": [
+        {
+          "id": "s3_0",
+          "text": "Stilt columns C1/C2: 8\u00d720\u00d8, C3: 4\u00d720+4\u00d716\u00d8, C4: 8\u00d716\u00d8, C5: 8\u00d716\u00d8",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s3_1",
+          "text": "Column spacing verified against approved drawing before pour",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s3_2",
+          "text": "Plinth beam 9\u00d718in \u2014 4\u00d716\u00d8 main + 8\u00d8 stirrups@200mm",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s3_3",
+          "text": "Cover blocks 38mm on all columns before shuttering",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s3_4",
+          "text": "Shuttering plumb and aligned \u2014 spirit level both directions",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s3_5",
+          "text": "M25 concrete pour \u2014 slump test + cube samples",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s3_6",
+          "text": "No extra water added to concrete after batching",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s3_7",
+          "text": "Column curing minimum 14 days",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s3_8",
+          "text": "Photograph all columns before and after shuttering",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Stilt Slab (Slab 1)",
+      "icon": "\ud83e\uddf1",
+      "color": "#F5A623",
+      "phase": "structure",
+      "budgetPct": 8,
+      "durationWks": 6,
+      "checklist": [
+        "Beam shuttering \u2014 check camber and prop spacing",
+        "Main beam 24\u00d730in \u2014 8\u00d720\u00d8 main + 10\u00d8 stirrups@100mm (support)",
+        "Secondary beam reinforcement in place as per drawing",
+        "Slab bottom steel \u2014 12\u00d8@100mm c/c main direction",
+        "Distribution steel \u2014 8\u00d8@150mm placed throughout",
+        "Cover blocks 25mm on slab steel throughout",
+        "Electrical conduits placed and tied before pour",
+        "M25 concrete pour \u2014 mechanical vibration throughout",
+        "No construction load for 28 days after pour",
+        "Curing 28 days \u2014 watchman daily tally check"
+      ],
+      "tasks": [
+        {
+          "id": "s4_0",
+          "text": "Beam shuttering \u2014 check camber and prop spacing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_1",
+          "text": "Main beam 24\u00d730in \u2014 8\u00d720\u00d8 main + 10\u00d8 stirrups@100mm (support)",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_2",
+          "text": "Secondary beam reinforcement in place as per drawing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_3",
+          "text": "Slab bottom steel \u2014 12\u00d8@100mm c/c main direction",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_4",
+          "text": "Distribution steel \u2014 8\u00d8@150mm placed throughout",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_5",
+          "text": "Cover blocks 25mm on slab steel throughout",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_6",
+          "text": "Electrical conduits placed and tied before pour",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_7",
+          "text": "M25 concrete pour \u2014 mechanical vibration throughout",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_8",
+          "text": "No construction load for 28 days after pour",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s4_9",
+          "text": "Curing 28 days \u2014 watchman daily tally check",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Ground Floor Slab (Slab 2)",
+      "icon": "\ud83e\uddf1",
+      "color": "#F5A623",
+      "phase": "structure",
+      "budgetPct": 8,
+      "durationWks": 6,
+      "checklist": [
+        "GF columns C1/C2: 8\u00d720\u00d8, C3: 4\u00d720+4\u00d716\u00d8",
+        "GF beam and slab shuttering erected",
+        "Beam reinforcement verified against drawing",
+        "Slab steel \u2014 12\u00d8@100mm + 8\u00d8 distribution",
+        "All plumbing sleeves and conduits in place",
+        "M25 pour + cube test samples",
+        "28-day curing"
+      ],
+      "tasks": [
+        {
+          "id": "s5_0",
+          "text": "GF columns C1/C2: 8\u00d720\u00d8, C3: 4\u00d720+4\u00d716\u00d8",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s5_1",
+          "text": "GF beam and slab shuttering erected",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s5_2",
+          "text": "Beam reinforcement verified against drawing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s5_3",
+          "text": "Slab steel \u2014 12\u00d8@100mm + 8\u00d8 distribution",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s5_4",
+          "text": "All plumbing sleeves and conduits in place",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s5_5",
+          "text": "M25 pour + cube test samples",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s5_6",
+          "text": "28-day curing",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "First Floor Slab (Slab 3)",
+      "icon": "\ud83e\uddf1",
+      "color": "#F5A623",
+      "phase": "structure",
+      "budgetPct": 8,
+      "durationWks": 6,
+      "checklist": [
+        "1F columns C1/C2: 4\u00d720+4\u00d716\u00d8, C3: 8\u00d716\u00d8",
+        "Lift shaft wall reinforcement (min 8.5ft footing depth)",
+        "Staircase RCC treads and landing slab",
+        "1F beams and slab reinforcement as per drawing",
+        "M25 pour + cube test",
+        "28-day curing"
+      ],
+      "tasks": [
+        {
+          "id": "s6_0",
+          "text": "1F columns C1/C2: 4\u00d720+4\u00d716\u00d8, C3: 8\u00d716\u00d8",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s6_1",
+          "text": "Lift shaft wall reinforcement (min 8.5ft footing depth)",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s6_2",
+          "text": "Staircase RCC treads and landing slab",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s6_3",
+          "text": "1F beams and slab reinforcement as per drawing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s6_4",
+          "text": "M25 pour + cube test",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s6_5",
+          "text": "28-day curing",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "Second Floor + Terrace (Slabs 4 & 5)",
+      "icon": "\ud83e\uddf1",
+      "color": "#F5A623",
+      "phase": "structure",
+      "budgetPct": 9,
+      "durationWks": 7,
+      "checklist": [
+        "2F columns C1/C2: 4\u00d716+4\u00d712\u00d8, C3: 8\u00d712\u00d8",
+        "2F beams and slab reinforcement",
+        "Terrace slab \u2014 lift room + OHT room (216 sft)",
+        "Parapet wall provision minimum 600mm height",
+        "Terrace waterproofing slope maintained toward drains",
+        "M25 pour + cube test",
+        "Compile all cube test results for all 5 slabs",
+        "Deshuttering timeline as per IS 456"
+      ],
+      "tasks": [
+        {
+          "id": "s7_0",
+          "text": "2F columns C1/C2: 4\u00d716+4\u00d712\u00d8, C3: 8\u00d712\u00d8",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s7_1",
+          "text": "2F beams and slab reinforcement",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s7_2",
+          "text": "Terrace slab \u2014 lift room + OHT room (216 sft)",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s7_3",
+          "text": "Parapet wall provision minimum 600mm height",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s7_4",
+          "text": "Terrace waterproofing slope maintained toward drains",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s7_5",
+          "text": "M25 pour + cube test",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s7_6",
+          "text": "Compile all cube test results for all 5 slabs",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s7_7",
+          "text": "Deshuttering timeline as per IS 456",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "Brick Masonry",
+      "icon": "\ud83e\uddf1",
+      "color": "#FF5A5A",
+      "phase": "masonry",
+      "budgetPct": 14,
+      "durationWks": 12,
+      "checklist": [
+        "Outer 9in walls \u2014 48,500 bricks, CM 1:6 PPC cement",
+        "Inner 4in walls \u2014 44,770 bricks, CM 1:6",
+        "Lintel beams over all door and window openings",
+        "Bricks soaked minimum 30 min before use",
+        "Plumb and level check every 600mm height",
+        "Maximum 1m wall height per day per lift",
+        "Window and door frame positions verified against floor plan"
+      ],
+      "tasks": [
+        {
+          "id": "s8_0",
+          "text": "Outer 9in walls \u2014 48,500 bricks, CM 1:6 PPC cement",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s8_1",
+          "text": "Inner 4in walls \u2014 44,770 bricks, CM 1:6",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s8_2",
+          "text": "Lintel beams over all door and window openings",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s8_3",
+          "text": "Bricks soaked minimum 30 min before use",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s8_4",
+          "text": "Plumb and level check every 600mm height",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s8_5",
+          "text": "Maximum 1m wall height per day per lift",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s8_6",
+          "text": "Window and door frame positions verified against floor plan",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "Plastering",
+      "icon": "\ud83d\udd8c",
+      "color": "#6699FF",
+      "phase": "masonry",
+      "budgetPct": 8,
+      "durationWks": 8,
+      "checklist": [
+        "Hacking of all RCC surfaces before plaster",
+        "Internal plaster 12mm CM 1:6 all rooms",
+        "External plaster 15mm CM 1:5",
+        "Ceiling plaster 6mm CM 1:4",
+        "Chicken mesh at all brick-RCC junctions to prevent cracks",
+        "Groove lines and band courses on external facade",
+        "Curing 7 days after each plaster coat"
+      ],
+      "tasks": [
+        {
+          "id": "s9_0",
+          "text": "Hacking of all RCC surfaces before plaster",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s9_1",
+          "text": "Internal plaster 12mm CM 1:6 all rooms",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s9_2",
+          "text": "External plaster 15mm CM 1:5",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s9_3",
+          "text": "Ceiling plaster 6mm CM 1:4",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s9_4",
+          "text": "Chicken mesh at all brick-RCC junctions to prevent cracks",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s9_5",
+          "text": "Groove lines and band courses on external facade",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s9_6",
+          "text": "Curing 7 days after each plaster coat",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "label": "Electrical & Plumbing",
+      "icon": "\u26a1",
+      "color": "#F5A623",
+      "phase": "mep",
+      "budgetPct": 9,
+      "durationWks": 8,
+      "checklist": [
+        "Concealed conduits \u2014 Finolex / RR / Havells throughout",
+        "CPVC/UPVC plumbing \u2014 Astral / Truflo throughout",
+        "Borewell drilling 300\u2013400ft completed",
+        "Water sump and OHT construction",
+        "MCB distribution boards \u2014 Legrand / Schneider all floors",
+        "Earthing \u2014 bear wire + 14 earth pits as per drawing",
+        "Inverter wiring provision all floors",
+        "Plumbing pressure test before closing walls",
+        "Electrical continuity test before plastering"
+      ],
+      "tasks": [
+        {
+          "id": "s10_0",
+          "text": "Concealed conduits \u2014 Finolex / RR / Havells throughout",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s10_1",
+          "text": "CPVC/UPVC plumbing \u2014 Astral / Truflo throughout",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s10_2",
+          "text": "Borewell drilling 300\u2013400ft completed",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s10_3",
+          "text": "Water sump and OHT construction",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s10_4",
+          "text": "MCB distribution boards \u2014 Legrand / Schneider all floors",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s10_5",
+          "text": "Earthing \u2014 bear wire + 14 earth pits as per drawing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s10_6",
+          "text": "Inverter wiring provision all floors",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s10_7",
+          "text": "Plumbing pressure test before closing walls",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s10_8",
+          "text": "Electrical continuity test before plastering",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "label": "Flooring & Tiling",
+      "icon": "\ud83e\ude9f",
+      "color": "#2DD4A0",
+      "phase": "finishing",
+      "budgetPct": 7,
+      "durationWks": 6,
+      "checklist": [
+        "2\u00d74ft Gujarat tiles all rooms \u2014 full evenness required",
+        "2\u00d72ft bathroom floor tiles \u2014 uniform spacing",
+        "2\u00d74ft bathroom wall tiles to ceiling height",
+        "Granite flooring \u2014 kitchen, staircase, lift, corridors (Blackberry/Steel Gray)",
+        "Kitchen granite platform + CC plank cupboards",
+        "Tile bond test 24h after laying \u2014 tap test for hollowness",
+        "No hollow sound anywhere \u2014 reject and re-lay"
+      ],
+      "tasks": [
+        {
+          "id": "s11_0",
+          "text": "2\u00d74ft Gujarat tiles all rooms \u2014 full evenness required",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s11_1",
+          "text": "2\u00d72ft bathroom floor tiles \u2014 uniform spacing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s11_2",
+          "text": "2\u00d74ft bathroom wall tiles to ceiling height",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s11_3",
+          "text": "Granite flooring \u2014 kitchen, staircase, lift, corridors (Blackberry/Steel Gray)",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s11_4",
+          "text": "Kitchen granite platform + CC plank cupboards",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s11_5",
+          "text": "Tile bond test 24h after laying \u2014 tap test for hollowness",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s11_6",
+          "text": "No hollow sound anywhere \u2014 reject and re-lay",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "label": "Doors, Windows & Railings",
+      "icon": "\ud83d\udeaa",
+      "color": "#9B7FFF",
+      "phase": "finishing",
+      "budgetPct": 8,
+      "durationWks": 6,
+      "checklist": [
+        "Main door \u2014 African Teak wood, frame 6\u00d73in",
+        "All other door frames \u2014 granite frames",
+        "Bedroom / bathroom doors \u2014 Laminated / WPVC / PVC",
+        "UPVC windows 90-series \u2014 Wento / Simta Astrix",
+        "uPVC window grills + powder-coated SS security mesh",
+        "North/South balcony \u2014 SS 304 frame + glass railing panels",
+        "East balcony/utility \u2014 sliding glass door + granite frame",
+        "Staircase railing \u2014 Jindal SS 304"
+      ],
+      "tasks": [
+        {
+          "id": "s12_0",
+          "text": "Main door \u2014 African Teak wood, frame 6\u00d73in",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s12_1",
+          "text": "All other door frames \u2014 granite frames",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s12_2",
+          "text": "Bedroom / bathroom doors \u2014 Laminated / WPVC / PVC",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s12_3",
+          "text": "UPVC windows 90-series \u2014 Wento / Simta Astrix",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s12_4",
+          "text": "uPVC window grills + powder-coated SS security mesh",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s12_5",
+          "text": "North/South balcony \u2014 SS 304 frame + glass railing panels",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s12_6",
+          "text": "East balcony/utility \u2014 sliding glass door + granite frame",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s12_7",
+          "text": "Staircase railing \u2014 Jindal SS 304",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "label": "Painting & Exterior",
+      "icon": "\ud83c\udfa8",
+      "color": "#FF5A5A",
+      "phase": "finishing",
+      "budgetPct": 5,
+      "durationWks": 5,
+      "checklist": [
+        "Interior \u2014 putty finish + 2 coats emulsion (Berger / Asian / Birla Opus)",
+        "Exterior \u2014 texture weather-shield finish",
+        "Compound wall completed",
+        "Entrance gate installed",
+        "Driveway and approach finishing",
+        "Rain water harvesting structures as per approved plan",
+        "Septic tank + percolation pit completed"
+      ],
+      "tasks": [
+        {
+          "id": "s13_0",
+          "text": "Interior \u2014 putty finish + 2 coats emulsion (Berger / Asian / Birla Opus)",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s13_1",
+          "text": "Exterior \u2014 texture weather-shield finish",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s13_2",
+          "text": "Compound wall completed",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s13_3",
+          "text": "Entrance gate installed",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s13_4",
+          "text": "Driveway and approach finishing",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s13_5",
+          "text": "Rain water harvesting structures as per approved plan",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s13_6",
+          "text": "Septic tank + percolation pit completed",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "label": "Systems & Handover",
+      "icon": "\ud83d\udd11",
+      "color": "#3D7EFF",
+      "phase": "handover",
+      "budgetPct": 8,
+      "durationWks": 4,
+      "checklist": [
+        "Lift installation \u2014 5-person Touchwood / Jag",
+        "CCTV \u2014 8 cameras + NVR 30-day recording",
+        "Generator installation \u2014 Escort / equivalent",
+        "Bathroom fittings \u2014 Hindware / Cera throughout",
+        "Kitchen sink \u2014 steel with U-shape tap",
+        "All taps and plumbing fixtures installed and tested",
+        "Permanent electricity connection live",
+        "Occupancy Certificate application filed with GVMC",
+        "Final snag list prepared and all items resolved"
+      ],
+      "tasks": [
+        {
+          "id": "s14_0",
+          "text": "Lift installation \u2014 5-person Touchwood / Jag",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s14_1",
+          "text": "CCTV \u2014 8 cameras + NVR 30-day recording",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s14_2",
+          "text": "Generator installation \u2014 Escort / equivalent",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s14_3",
+          "text": "Bathroom fittings \u2014 Hindware / Cera throughout",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s14_4",
+          "text": "Kitchen sink \u2014 steel with U-shape tap",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s14_5",
+          "text": "All taps and plumbing fixtures installed and tested",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s14_6",
+          "text": "Permanent electricity connection live",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s14_7",
+          "text": "Occupancy Certificate application filed with GVMC",
+          "done": false,
+          "doneDate": ""
+        },
+        {
+          "id": "s14_8",
+          "text": "Final snag list prepared and all items resolved",
+          "done": false,
+          "doneDate": ""
+        }
+      ]
+    }
+  ],
+  "bs_budget": [
+    {
+      "id": "b1",
+      "label": "Pre-Construction",
+      "pct": 0.014,
+      "allocated": 180147,
+      "spent": 0
+    },
+    {
+      "id": "b2",
+      "label": "Foundation",
+      "pct": 0.082,
+      "allocated": 1055147,
+      "spent": 0
+    },
+    {
+      "id": "b3",
+      "label": "Structure (RCC)",
+      "pct": 0.34,
+      "allocated": 4375000,
+      "spent": 0
+    },
+    {
+      "id": "b4",
+      "label": "Masonry & Plaster",
+      "pct": 0.198,
+      "allocated": 2547794,
+      "spent": 0
+    },
+    {
+      "id": "b5",
+      "label": "MEP",
+      "pct": 0.076,
+      "allocated": 977941,
+      "spent": 0
+    },
+    {
+      "id": "b6",
+      "label": "Flooring & Tiling",
+      "pct": 0.102,
+      "allocated": 1312500,
+      "spent": 0
+    },
+    {
+      "id": "b7",
+      "label": "Doors & Windows",
+      "pct": 0.082,
+      "allocated": 1055147,
+      "spent": 0
+    },
+    {
+      "id": "b8",
+      "label": "Painting",
+      "pct": 0.05,
+      "allocated": 643382,
+      "spent": 0
+    },
+    {
+      "id": "b9",
+      "label": "Systems & Handover",
+      "pct": 0.064,
+      "allocated": 823529,
+      "spent": 0
+    },
+    {
+      "id": "b10",
+      "label": "Contingency (8%)",
+      "pct": 0.08,
+      "allocated": 1029412,
+      "spent": 0
+    }
+  ],
+  "bs_pays": [],
+  "bs_team": [
+    {
+      "id": "t1",
+      "role": "Site Supervisor",
+      "name": "",
+      "phone": "",
+      "salary": 30000,
+      "status": "pending",
+      "hired": ""
+    },
+    {
+      "id": "t2",
+      "role": "Watchman (live-in)",
+      "name": "",
+      "phone": "",
+      "salary": 9000,
+      "status": "pending",
+      "hired": ""
+    },
+    {
+      "id": "t3",
+      "role": "RCC Contractor",
+      "name": "",
+      "phone": "",
+      "salary": 0,
+      "status": "pending",
+      "hired": ""
+    },
+    {
+      "id": "t4",
+      "role": "Mason Contractor",
+      "name": "",
+      "phone": "",
+      "salary": 0,
+      "status": "pending",
+      "hired": ""
+    },
+    {
+      "id": "t5",
+      "role": "Plumber",
+      "name": "",
+      "phone": "",
+      "salary": 0,
+      "status": "pending",
+      "hired": ""
+    },
+    {
+      "id": "t6",
+      "role": "Electrician",
+      "name": "",
+      "phone": "",
+      "salary": 0,
+      "status": "pending",
+      "hired": ""
+    },
+    {
+      "id": "t7",
+      "role": "Tile Contractor",
+      "name": "",
+      "phone": "",
+      "salary": 0,
+      "status": "pending",
+      "hired": ""
+    },
+    {
+      "id": "t8",
+      "role": "Painter",
+      "name": "",
+      "phone": "",
+      "salary": 0,
+      "status": "pending",
+      "hired": ""
+    }
+  ],
+  "bs_logs": [],
+  "bs_photos": [],
+  "bs_customers": [
+    {
+      "id": "cust_1780464183485",
+      "name": "Kalyana",
+      "email": "ks_kalyan@yahoo.com",
+      "phone": "9104089153"
+    }
+  ],
+  "bs_loan": {}
+}
